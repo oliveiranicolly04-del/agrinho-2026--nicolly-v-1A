@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroVerde Algodão</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .font-heading { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { animation: fadeUp 0.8s ease forwards; opacity:0; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+    .fade-up-d5 { animation-delay: 0.5s; }
+    .cotton-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%); }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baby: { 50:'#f0f9ff', 100:'#e0f2fe', 200:'#b9e6fe', 300:'#7dd3fc', 400:'#38bdf8', 500:'#0ea5e9' },
+            forest: { 500:'#22c55e', 600:'#16a34a' },
+            earth: { 500:'#a16207', 600:'#854d0e' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body class="h-full font-body">
+  <div id="app" class="w-full h-full overflow-auto bg-baby-50">
+   <!-- Navbar -->
+   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-baby-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-baby-300 to-forest-500 flex items-center justify-center">
+       <span class="text-white text-lg">🌱</span>
+      </div><span id="nav-title" class="font-heading font-bold text-xl text-baby-500">AgroVerde Algodão</span>
+     </div>
+     <div class="hidden md:flex gap-6 text-sm font-semibold text-gray-600">
+      <a href="#sobre" class="hover:text-baby-500 transition">Sobre</a> <a href="#producao" class="hover:text-baby-500 transition">Produção</a> <a href="#sustentabilidade" class="hover:text-baby-500 transition">Sustentabilidade</a> <a href="#dados" class="hover:text-baby-500 transition">Dados</a>
+     </div>
+    </div>
+   </nav><!-- Hero -->
+   <section class="relative cotton-pattern bg-gradient-to-br from-baby-100 via-baby-50 to-white py-20 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+     <div class="flex-1 fade-up">
+      <p id="hero-subtitle" class="text-baby-500 font-semibold uppercase tracking-widest text-sm mb-3">Futuro Sustentável</p>
+      <h1 id="hero-title" class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">AgroVerde<br><span class="text-baby-400">Algodão</span></h1>
+      <p id="hero-desc" class="text-lg text-gray-600 max-w-lg mb-8">Equilíbrio entre produção e meio ambiente. Cultivando algodão de forma responsável para um planeta mais verde.</p><a href="#sobre" class="inline-flex items-center gap-2 bg-baby-400 hover:bg-baby-500 text-white font-semibold px-6 py-3 rounded-full transition shadow-lg shadow-baby-200"> Conheça nossa missão <i data-lucide="arrow-down" class="w-4 h-4"></i> </a>
+     </div>
+     <div class="flex-1 flex justify-center fade-up fade-up-d2">
+      <div class="relative">
+       <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-baby-200 to-baby-100 flex items-center justify-center animate-float shadow-2xl shadow-baby-200">
+        <svg viewbox="0 0 200 200" class="w-48 h-48 md:w-60 md:h-60" fill="none">
+         <!-- Cotton boll --> <circle cx="100" cy="85" r="18" fill="white" stroke="#7dd3fc" stroke-width="2" /> <circle cx="82" cy="75" r="14" fill="white" stroke="#7dd3fc" stroke-width="2" /> <circle cx="118" cy="75" r="14" fill="white" stroke="#7dd3fc" stroke-width="2" /> <circle cx="88" cy="95" r="13" fill="white" stroke="#7dd3fc" stroke-width="2" /> <circle cx="112" cy="95" r="13" fill="white" stroke="#7dd3fc" stroke-width="2" /> <!-- Stem --> <path d="M100 108 L100 160" stroke="#16a34a" stroke-width="3" stroke-linecap="round" /> <!-- Leaves --> <path d="M100 130 Q85 120 80 135 Q90 135 100 130" fill="#22c55e" /> <path d="M100 140 Q115 130 120 145 Q110 145 100 140" fill="#16a34a" />
+        </svg>
+       </div>
+       <div class="absolute -bottom-4 -right-4 bg-white rounded-xl p-3 shadow-lg border border-baby-100">
+        <span class="text-2xl">🌿</span>
+        <p class="text-xs font-bold text-gray-700">100% Sustentável</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sobre -->
+   <section id="sobre" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto fade-up fade-up-d1">
+     <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+       <h2 id="about-title" class="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre o Projeto</h2>
+       <p id="about-desc" class="text-gray-600 text-lg leading-relaxed mb-6">A AgroVerde Algodão é uma iniciativa de produção de algodão orgânico certificado, localizada no Cerrado, que combina tecnologia de ponta com práticas agroecológicas comprovadas. Desde 2015, produzimos algodão 100% sustentável para marcas internacionais.</p>
+       <div class="space-y-3">
+        <div class="flex items-center gap-3">
+         <div class="w-6 h-6 rounded-full bg-forest-500 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-4 h-4 text-white"></i>
+         </div>
+         <p class="text-gray-700 font-semibold">Certificado GOTS (Global Organic Textile Standard)</p>
+        </div>
+        <div class="flex items-center gap-3">
+         <div class="w-6 h-6 rounded-full bg-forest-500 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-4 h-4 text-white"></i>
+         </div>
+         <p class="text-gray-700 font-semibold">Certificação OCS (Organic Content Standard)</p>
+        </div>
+        <div class="flex items-center gap-3">
+         <div class="w-6 h-6 rounded-full bg-forest-500 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-4 h-4 text-white"></i>
+         </div>
+         <p class="text-gray-700 font-semibold">Rastreabilidade via blockchain</p>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gradient-to-br from-baby-200 via-baby-100 to-baby-50 rounded-3xl p-8 border-2 border-baby-300 h-96 flex flex-col justify-center">
+       <div class="text-center">
+        <div class="text-6xl mb-4">
+         🌾
+        </div>
+        <p class="text-3xl font-bold text-baby-600 mb-2">Desde 2015</p>
+        <p class="text-gray-700 font-semibold">Cultivando sustentabilidade</p>
+        <div class="mt-8 pt-8 border-t border-baby-300">
+         <p class="text-sm text-gray-600">Localização: Cerrado do Brasil</p>
+         <p class="text-sm text-gray-600">Região: Centro-Oeste</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gradient-to-br from-baby-50 to-white rounded-2xl p-8 border border-baby-200 hover:shadow-2xl hover:-translate-y-2 transition fade-up fade-up-d2">
+       <div class="w-14 h-14 bg-baby-200 rounded-xl flex items-center justify-center mb-4"><i data-lucide="sprout" class="w-7 h-7 text-baby-500"></i>
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3 text-gray-800">Manejo Regenerativo</h3>
+       <p class="text-gray-600 text-sm leading-relaxed">Sistema de rotação de culturas, compostagem natural, cobertura do solo e zero aração. Recupera carbono do solo em 3-5 anos.</p>
+      </div>
+      <div class="bg-gradient-to-br from-forest-50 to-white rounded-2xl p-8 border border-forest-200 hover:shadow-2xl hover:-translate-y-2 transition fade-up fade-up-d3">
+       <div class="w-14 h-14 bg-forest-500/20 rounded-xl flex items-center justify-center mb-4"><i data-lucide="droplets" class="w-7 h-7 text-forest-600"></i>
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3 text-gray-800">Gestão Hídrica</h3>
+       <p class="text-gray-600 text-sm leading-relaxed">Irrigação por gotejamento, colheita de chuva, análise de solo e sistema de monitoramento em tempo real via IoT.</p>
+      </div>
+      <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-200 hover:shadow-2xl hover:-translate-y-2 transition fade-up fade-up-d4">
+       <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-7 h-7 text-blue-600"></i>
+       </div>
+       <h3 class="font-heading font-bold text-xl mb-3 text-gray-800">Rastreabilidade</h3>
+       <p class="text-gray-600 text-sm leading-relaxed">Cada lote de algodão é rastreado do plantio à industrialização com QR code e certificação verificável.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Produção -->
+   <section id="producao" class="py-16 px-4 bg-gradient-to-b from-baby-50 to-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-center fade-up">Ciclo de Produção</h2>
+     <p class="text-gray-600 text-center max-w-3xl mx-auto mb-14 fade-up fade-up-d1 text-lg">Um processo integrado que combina inovação tecnológica com práticas seculares de agricultura sustentável</p>
+     <div class="space-y-8">
+      <div class="grid md:grid-cols-2 gap-8 items-center fade-up fade-up-d2">
+       <div class="bg-white rounded-2xl p-8 shadow-lg border border-baby-200">
+        <div class="flex items-start gap-4">
+         <div class="w-16 h-16 rounded-full bg-baby-200 flex items-center justify-center flex-shrink-0 text-3xl">
+          1️⃣
+         </div>
+         <div>
+          <h4 class="font-bold text-xl text-gray-800 mb-2">Preparação e Análise do Solo</h4>
+          <p class="text-gray-600">Realização de testes completos de solo para determinar pH, nutrientes e matéria orgânica. Aplicação de compostagem e inoculantes biológicos. Mapeamento de variabilidade espacial com drones.</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 border border-amber-200 h-64 flex items-center justify-center">
+        <div class="text-center">
+         <div class="text-6xl mb-3">
+          🌱
+         </div>
+         <p class="text-sm text-gray-600 font-semibold">Mês 1-2</p>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 items-center fade-up fade-up-d3">
+       <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200 h-64 flex items-center justify-center md:order-2">
+        <div class="text-center">
+         <div class="text-6xl mb-3">
+          💧
+         </div>
+         <p class="text-sm text-gray-600 font-semibold">Mês 3-4</p>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl p-8 shadow-lg border border-baby-200 md:order-1">
+        <div class="flex items-start gap-4">
+         <div class="w-16 h-16 rounded-full bg-blue-200 flex items-center justify-center flex-shrink-0 text-3xl">
+          2️⃣
+         </div>
+         <div>
+          <h4 class="font-bold text-xl text-gray-800 mb-2">Plantio e Irrigação Inteligente</h4>
+          <p class="text-gray-600">Semeadura mecanizada com sementes certificadas. Sistema de irrigação por gotejamento com sensores de umidade do solo. Monitoramento de precipitação para otimização hídrica.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 items-center fade-up fade-up-d4">
+       <div class="bg-white rounded-2xl p-8 shadow-lg border border-baby-200">
+        <div class="flex items-start gap-4">
+         <div class="w-16 h-16 rounded-full bg-green-200 flex items-center justify-center flex-shrink-0 text-3xl">
+          3️⃣
+         </div>
+         <div>
+          <h4 class="font-bold text-xl text-gray-800 mb-2">Crescimento e Monitoramento</h4>
+          <p class="text-gray-600">Mapeamento de pragas com armadilhas inteligentes. Manejo integrado com uso de inimigos naturais. Monitoramento por drones para detecção de doenças. Zero aplicação de inseticidas sintéticos.</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200 h-64 flex items-center justify-center">
+        <div class="text-center">
+         <div class="text-6xl mb-3">
+          🌾
+         </div>
+         <p class="text-sm text-gray-600 font-semibold">Mês 5-7</p>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 items-center fade-up fade-up-d5">
+       <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border border-orange-200 h-64 flex items-center justify-center md:order-2">
+        <div class="text-center">
+         <div class="text-6xl mb-3">
+          🏭
+         </div>
+         <p class="text-sm text-gray-600 font-semibold">Mês 8-9</p>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl p-8 shadow-lg border border-baby-200 md:order-1">
+        <div class="flex items-start gap-4">
+         <div class="w-16 h-16 rounded-full bg-orange-200 flex items-center justify-center flex-shrink-0 text-3xl">
+          4️⃣
+         </div>
+         <div>
+          <h4 class="font-bold text-xl text-gray-800 mb-2">Colheita e Beneficiamento</h4>
+          <p class="text-gray-600">Colheita mecanizada de baixa emissão de carbono. Armazenamento em estruturas climatizadas. Limpeza e classificação por sistema óptico. Embalagem compostável.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 items-center fade-up fade-up-d1" style="animation-delay: 0.6s">
+       <div class="bg-white rounded-2xl p-8 shadow-lg border border-baby-200">
+        <div class="flex items-start gap-4">
+         <div class="w-16 h-16 rounded-full bg-purple-200 flex items-center justify-center flex-shrink-0 text-3xl">
+          5️⃣
+         </div>
+         <div>
+          <h4 class="font-bold text-xl text-gray-800 mb-2">Rastreamento e Certificação</h4>
+          <p class="text-gray-600">Cada lote recebe código QR único. Análise em laboratório independente. Emissão de certificado GOTS. Registro na blockchain para transparência total. Envio para indústria têxtil certificada.</p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200 h-64 flex items-center justify-center">
+        <div class="text-center">
+         <div class="text-6xl mb-3">
+          ✅
+         </div>
+         <p class="text-sm text-gray-600 font-semibold">Mês 10-12</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sustentabilidade -->
+   <section id="sustentabilidade" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+     <div class="flex-1 fade-up">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-6">Compromisso com o Meio Ambiente</h2>
+      <div class="space-y-4">
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-forest-500/20 flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="check" class="w-4 h-4 text-forest-600"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-gray-800">Redução de 40% em agrotóxicos</h4>
+         <p class="text-sm text-gray-600">Uso de controle biológico e inimigos naturais.</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-forest-500/20 flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="check" class="w-4 h-4 text-forest-600"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-gray-800">Energia solar nas operações</h4>
+         <p class="text-sm text-gray-600">70% da energia utilizada vem de painéis solares.</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-forest-500/20 flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="check" class="w-4 h-4 text-forest-600"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-gray-800">Preservação de nascentes</h4>
+         <p class="text-sm text-gray-600">Área de preservação permanente mantida e ampliada.</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-full bg-forest-500/20 flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="check" class="w-4 h-4 text-forest-600"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-gray-800">Carbono neutro até 2030</h4>
+         <p class="text-sm text-gray-600">Metas claras de compensação e redução de emissões.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex-1 fade-up fade-up-d2">
+      <div class="bg-gradient-to-br from-baby-100 to-forest-500/10 rounded-3xl p-8 border border-baby-200">
+       <div class="grid grid-cols-2 gap-6 text-center">
+        <div>
+         <p class="text-3xl font-bold text-baby-500">60%</p>
+         <p class="text-xs text-gray-600 font-semibold">Menos água</p>
+        </div>
+        <div>
+         <p class="text-3xl font-bold text-forest-600">40%</p>
+         <p class="text-xs text-gray-600 font-semibold">Menos químicos</p>
+        </div>
+        <div>
+         <p class="text-3xl font-bold text-baby-500">70%</p>
+         <p class="text-xs text-gray-600 font-semibold">Energia solar</p>
+        </div>
+        <div>
+         <p class="text-3xl font-bold text-forest-600">2030</p>
+         <p class="text-xs text-gray-600 font-semibold">Carbono neutro</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Dados -->
+   <section id="dados" class="py-16 px-4 bg-baby-50">
+    <div class="max-w-6xl mx-auto text-center">
+     <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-800 mb-12 fade-up">Nossos Números</h2>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 fade-up fade-up-d1">
+      <div class="bg-white rounded-2xl p-6 shadow border border-baby-100">
+       <i data-lucide="map-pin" class="w-8 h-8 text-baby-400 mx-auto mb-2"></i>
+       <p class="text-2xl font-bold text-gray-800">5.000</p>
+       <p class="text-xs text-gray-500 font-semibold">Hectares cultivados</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow border border-baby-100">
+       <i data-lucide="users" class="w-8 h-8 text-baby-400 mx-auto mb-2"></i>
+       <p class="text-2xl font-bold text-gray-800">320</p>
+       <p class="text-xs text-gray-500 font-semibold">Famílias beneficiadas</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow border border-baby-100">
+       <i data-lucide="package" class="w-8 h-8 text-baby-400 mx-auto mb-2"></i>
+       <p class="text-2xl font-bold text-gray-800">12 mil</p>
+       <p class="text-xs text-gray-500 font-semibold">Toneladas/ano</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow border border-baby-100">
+       <i data-lucide="tree-pine" class="w-8 h-8 text-forest-500 mx-auto mb-2"></i>
+       <p class="text-2xl font-bold text-gray-800">1.200</p>
+       <p class="text-xs text-gray-500 font-semibold">Árvores plantadas</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-gray-800 text-white py-10 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="font-heading text-xl font-bold mb-2">AgroVerde Algodão</p>
+     <p class="text-gray-400 text-sm mb-4">Agroforte • Futuro Sustentável • Equilíbrio entre Produção e Meio Ambiente</p>
+     <p class="text-gray-500 text-xs">© 2024 AgroVerde Algodão. Todos os direitos reservados.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+  const defaultConfig = {
+    site_title: 'AgroVerde Algodão',
+    hero_subtitle: 'Futuro Sustentável',
+    hero_description: 'Equilíbrio entre produção e meio ambiente. Cultivando algodão de forma responsável para um planeta mais verde.',
+    about_title: 'Sobre o Projeto',
+    about_desc: 'A AgroVerde Algodão é uma iniciativa de produção de algodão orgânico certificado, localizada no Cerrado, que combina tecnologia de ponta com práticas agroecológicas comprovadas. Desde 2015, produzimos algodão 100% sustentável para marcas internacionais.',
+    background_color: '#f0f9ff',
+    surface_color: '#ffffff',
+    text_color: '#1f2937',
+    primary_action_color: '#38bdf8',
+    secondary_action_color: '#22c55e',
+    font_family: 'Playfair Display',
+    font_size: 16
+  };
+
+  async function onConfigChange(config) {
+    const c = {...defaultConfig, ...config};
+    document.getElementById('nav-title').textContent = c.site_title;
+    document.getElementById('hero-title').innerHTML = c.site_title.replace(' ', '<br><span class="text-baby-400">') + '</span>';
+    document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+    document.getElementById('hero-desc').textContent = c.hero_description;
+    if (document.getElementById('about-title')) document.getElementById('about-title').textContent = c.about_title;
+    if (document.getElementById('about-desc')) document.getElementById('about-desc').textContent = c.about_desc;
+
+    document.querySelectorAll('.font-heading').forEach(el => {
+      el.style.fontFamily = `${c.font_family}, serif`;
+    });
+
+    const baseSize = c.font_size;
+    document.querySelectorAll('h1').forEach(el => el.style.fontSize = `${baseSize * 3}px`);
+    document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${baseSize * 2}px`);
+    document.querySelectorAll('p').forEach(el => { if(!el.style.fontSize) el.style.fontSize = `${baseSize}px`; });
+  }
+
+  function mapToCapabilities(config) {
+    const c = {...defaultConfig, ...config};
+    return {
+      recolorables: [
+        { get: () => c.background_color, set: v => { c.background_color = v; window.elementSdk.setConfig({background_color:v}); }},
+        { get: () => c.surface_color, set: v => { c.surface_color = v; window.elementSdk.setConfig({surface_color:v}); }},
+        { get: () => c.text_color, set: v => { c.text_color = v; window.elementSdk.setConfig({text_color:v}); }},
+        { get: () => c.primary_action_color, set: v => { c.primary_action_color = v; window.elementSdk.setConfig({primary_action_color:v}); }},
+        { get: () => c.secondary_action_color, set: v => { c.secondary_action_color = v; window.elementSdk.setConfig({secondary_action_color:v}); }}
+      ],
+      borderables: [],
+      fontEditable: {
+        get: () => c.font_family,
+        set: v => { c.font_family = v; window.elementSdk.setConfig({font_family:v}); }
+      },
+      fontSizeable: {
+        get: () => c.font_size,
+        set: v => { c.font_size = v; window.elementSdk.setConfig({font_size:v}); }
+      }
+    };
+  }
+
+  function mapToEditPanelValues(config) {
+    const c = {...defaultConfig, ...config};
+    return new Map([
+      ['site_title', c.site_title],
+      ['hero_subtitle', c.hero_subtitle],
+      ['hero_description', c.hero_description],
+      ['about_title', c.about_title],
+      ['about_desc', c.about_desc]
+    ]);
+  }
+
+  window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities, mapToEditPanelValues });
+
+  // Intersection Observer for fade animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.style.animationPlayState = 'running'; });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => { el.style.animationPlayState = 'paused'; observer.observe(el); });
+
+  lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a057278aedb999ea',t:'MTc4MDQxMDYxMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
